@@ -1,16 +1,15 @@
-
+"""Library import"""
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 
-
+"""Define class Bikes_page"""
 class Bikes_page(Base):
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-
 
     # Locators
 
@@ -28,8 +27,7 @@ class Bikes_page(Base):
     gender_unisex_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[7]/div[2]/div[1]/div[4]/label/span/span"
     model_year_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[8]/div[1]"
     model_year_2021_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[8]/div[2]/div[1]/div[6]/div[3]/label/span/span"
-    # bikes_size_xl_filter = "//*[@id='bx_3966226736_47584_prop_105_list']/li[2]/span"
-    select_bike_polygon_strattos = "//*[@id='bx_3966226736_47584']/div/div[2]/a/span"
+    select_bike_polygon_strattos = "//*[@id='bx_3966226736_47584']/div/div[2]/a/span/span"
 
     # Getters
 
@@ -110,7 +108,7 @@ class Bikes_page(Base):
         print("Click model year 2021 filter")
     def click_select_bike_polygon_strattos(self):
         self.get_select_bike_polygon_strattos().click()
-        print("Click bike polygon strattos")
+        print("Click bike from result")
 
     # Methods
 
