@@ -32,7 +32,7 @@ def test_buy_product_1(set_up, set_group):
     bpsp = Bike_polygon_strattos_page(driver)
     bpsp.check_bike_polygon_strattos_page_link()
     bpsp.info_product()
-    # bpsp.polygon_strattos_bike()
+    bpsp.polygon_strattos_bike()
 
 
     # cip = Client_information_page(driver)
@@ -48,20 +48,20 @@ def test_buy_product_1(set_up, set_group):
     time.sleep(1)
     # driver.quit()
 #
-# @pytest.mark.run(order=1)
-# def test_buy_product_2(set_up, set_group):
-#
-#     options = webdriver.ChromeOptions()
-#     options.add_experimental_option("detach", True)
-#     driver = webdriver.Chrome(options=options, service=Service())
-#
-#     print("Start Test 2")
-#
-#     login = Login_page(driver)
-#     login.open_direct_link()
-#
-#     bp = Bikes_page(driver)
-#     bp.product_2_choosing()
+@pytest.mark.run(order=1)
+def test_buy_product_2(set_up, set_group):
+
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome(options=options, service=Service())
+
+    print("Start Test 2")
+
+    login = Login_page(driver)
+    login.open_direct_link()
+
+    bp = Bikes_page(driver)
+    bp.product_2_choosing()
 #
 #     cp = Cart_page(driver)
 #     cp.click_checkout_button()

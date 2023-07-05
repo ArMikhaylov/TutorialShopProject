@@ -1,4 +1,5 @@
 """Library import"""
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -107,6 +108,7 @@ class Bikes_page(Base):
         self.get_model_year_2021_filter().click()
         print("Click model year 2021 filter")
     def click_select_bike_polygon_strattos(self):
+        time.sleep(2)
         self.get_select_bike_polygon_strattos().click()
         print("Click bike from result")
 

@@ -1,20 +1,22 @@
-
+"""Library import"""
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 
-
-class Payment_page(Base):
+"""Define class Basket_page"""
+class Basket_page(Base):
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
 
-
     # Locators
 
     finish_button = "//button[@id='finish']"
+    basket_product_articul = "//*[@id='basket-item-height-aligner-17249']/div[2]/h2/a/span/text()"
+    basket_product_price = "//div[@data-entity='basket-total-price']"
+    clear_button = "//span[@class='delete_all colored_theme_hover_text remove_all_basket']"
 
     # Getters
 
