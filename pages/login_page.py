@@ -62,7 +62,7 @@ class Login_page(Base):
         self.click_login_button()
         self.driver.get(personal_url)
         print("Moved to https://www.desporte.ru/personal/")
-        self.assert_world(self.get_lk_word(), 'Личный кабинет')
+        self.assert_word(self.get_lk_word(), 'Личный кабинет')
 
     def open_direct_link(self):
         bikes_filtered_url = 'https://www.desporte.ru/catalog/bikes/filter/price-base-to-200000/brand-is-poligon/code_type-is-shosseynyy-velosiped/style-is-bb70115eb856c8dd957fd528270f2365/whill-is-700%D1%81/itb_sex-is-uniseks/year-is-2021/apply/'

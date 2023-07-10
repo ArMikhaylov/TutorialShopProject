@@ -13,7 +13,7 @@ class Base():
 
     """Method assert word"""
 
-    def assert_world(self, word, result):
+    def assert_word(self, word, result):
         value_word = word.text
         try:
             assert value_word == result

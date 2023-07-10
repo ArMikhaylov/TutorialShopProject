@@ -1,4 +1,5 @@
 """Library import"""
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -44,8 +45,8 @@ class Bike_polygon_strattos_page(Base):
         self.get_move_to_basket_button().click()
         print("Click move to basket button")
     def save_product_articul(self):
-        value_product_articul = self.get_product_articul().text
-        print("Product name is '" + value_product_articul + "'")
+        self.value_product_articul = self.get_product_articul().text
+        print("Product article is '{value_product_articul}'")
     def save_product_price(self):
         value_product_price = self.get_product_price().text
         print("Product price is '" + value_product_price + "'")
@@ -59,17 +60,12 @@ class Bike_polygon_strattos_page(Base):
     def polygon_strattos_bike(self):
         self.click_xl_filter()
         self.click_basket_button()
+        time.sleep(1)
         self.click_move_to_basket_button()
 
-    def info_product(self):
+    def product_articul_method(self):
         self.save_product_articul()
-        self.save_product_price()
-        # if value_product_name == "Шоссейный велосипед Polygon Strattos S5D (2021)":
-        #     print("Product name is 'Шоссейный велосипед Polygon Strattos S5D (2021)'")
-        # else:
-        #     print("Product name is '" + value_product_name + "'")
-        # if value_product_price == "168 000":
-        #     print("Product price is 168 000")
-        # else:
-        #     print("Product price is " + value_product_price)
+        # print("Product article is '" + value_product_articul + "'")
 
+    def product_price_method(self):
+        self.save_product_price()

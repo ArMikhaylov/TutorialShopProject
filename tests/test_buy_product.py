@@ -3,6 +3,8 @@ import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+
+from pages.basket_page import Basket_page
 from pages.bikes_page import Bikes_page
 from pages.login_page import Login_page
 from pages.catalog_page import Catalog_page
@@ -31,18 +33,18 @@ def test_buy_product_1(set_up, set_group):
 
     bpsp = Bike_polygon_strattos_page(driver)
     bpsp.check_bike_polygon_strattos_page_link()
-    bpsp.info_product()
+    test_value_product_articl = bpsp.product_articul_method().text
+    # bpsp.product_price_method()
     bpsp.polygon_strattos_bike()
+    time.sleep(1)
 
-
-    # cip = Client_information_page(driver)
-    # cip.input_information()
-    #
-    # p = Payment_page(driver)
-    # p.click_finish_button()
-    #
-    # f = Finish_page(driver)
-    # f.finish()
+    # bsp = Basket_page(driver)
+    # bsp.check_basket_page_link()
+    # test_correct_basket_product_articul = bsp.basket_product_articul_method().text
+    # bsp.assert_basket_product_articul(test_value_product_articl, test_correct_basket_product_articul)
+    # bsp.click_clear_button_method()
+    # bsp.assert_basket_product_articul(bpsp.value_product_articul, bsp.correct_basket_product_articul)
+    # bsp.assert_basket_product_price(bpsp.value_product_price, bsp.correct_basket_product_price)
 
     print("Finish Test 1")
     time.sleep(1)
