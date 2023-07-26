@@ -17,7 +17,7 @@ class Bike_polygon_strattos_page(Base):
     xl_filter = "//*[@id='bx_117848907_47584_prop_105_list']/li[2]"
     basket_button = "//div[@id='bx_117848907_47584_basket_actions']"
     move_to_basket_button = "//div[@class='wrap_icon wrap_basket baskets line-block__item top_basket']"
-    product_articul = "//*[@id='bx_117848907_47584']/div[1]/div/div[1]/div/div[2]/div/span[2]"
+    product_articul = "//span[@class='article__value']"
     product_price = "//*[@id='content']/div[2]/div/div/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/span[1]/span[1]"
 
     # Getters
@@ -46,7 +46,8 @@ class Bike_polygon_strattos_page(Base):
         print("Click move to basket button")
     def save_product_articul(self):
         self.value_product_articul = self.get_product_articul().text
-        print("Product article is '" + value_product_articul + "'")
+        # print(value_product_articul)
+        # print("Product article is '" + value_product_articul + "'")
     def save_product_price(self):
         value_product_price = self.get_product_price().text
         print("Product price is '" + value_product_price + "'")
@@ -65,7 +66,6 @@ class Bike_polygon_strattos_page(Base):
 
     def product_articul_method(self):
         self.save_product_articul()
-        # print("Product article is '" + value_product_articul + "'")
 
     def product_price_method(self):
         self.save_product_price()
