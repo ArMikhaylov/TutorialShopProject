@@ -33,7 +33,6 @@ def test_buy_product_1(set_up, set_group):
 
     bpsp = Bike_polygon_strattos_page(driver)
     bpsp.check_bike_polygon_strattos_page_link()
-    # bpsp.product_articul_method
     test_value_product_articl = bpsp.product_articul_method().text
     print(test_value_product_articl)
     # bpsp.product_price_method()

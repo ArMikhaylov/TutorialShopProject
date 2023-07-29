@@ -17,7 +17,7 @@ class Bikes_page(Base):
     price_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[2]/div[1]/div"
     max_price_filter = "//input[@id='MAX_SMART_FILTER_P1_MAX']"
     brand_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[3]/div[1]"
-    brand_polygon_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[3]/div[2]/div[1]/div[6]/div[6]/label/span/span"
+    brand_polygon_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[3]/div[2]/div[1]/div[6]/div[7]/label/span/span"
     bikes_type_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[4]/div[1]/div"
     bikes_type_road_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[4]/div[2]/div[1]/div[5]/label/span/span"
     riding_style_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[5]/div[1]/div/span[1]"
