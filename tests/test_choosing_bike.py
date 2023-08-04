@@ -41,11 +41,13 @@ def test_buy_product_1(set_up, set_group):
     bpsp.polygon_strattos_bike()
     time.sleep(1)
 
-    # bsp = Basket_page(driver)
-    # bsp.check_basket_page_link()
+    bsp = Basket_page(driver)
+    bsp.check_basket_page_link()
+    bsp.basket_product_articul_method()
+    bsp.basket_product_price_method()
     # test_correct_basket_product_articul = bsp.basket_product_articul_method().text
     # bsp.assert_basket_product_articul(test_value_product_articl, test_correct_basket_product_articul)
-    # bsp.click_clear_button_method()
+    bsp.click_clear_button_method()
     # bsp.assert_basket_product_articul(bpsp.value_product_articul, bsp.correct_basket_product_articul)
     # bsp.assert_basket_product_price(bpsp.value_product_price, bsp.correct_basket_product_price)
 
