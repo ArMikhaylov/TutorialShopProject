@@ -35,9 +35,8 @@ def test_buy_product_1(set_up, set_group):
     bpsp.check_bike_polygon_strattos_page_link()
     bpsp.product_articul_method()
     bpsp.product_price_method()
-    # test_value_product_articl = bpsp.product_articul_method().text
-    # print(test_value_product_articl)
-    # bpsp.product_price_method()
+    test_value_articul = bpsp.value_product_articul
+    test_value_price = bpsp.value_product_price
     bpsp.polygon_strattos_bike()
     time.sleep(1)
 
@@ -45,8 +44,11 @@ def test_buy_product_1(set_up, set_group):
     bsp.check_basket_page_link()
     bsp.basket_product_articul_method()
     bsp.basket_product_price_method()
-    # test_correct_basket_product_articul = bsp.basket_product_articul_method().text
-    # bsp.assert_basket_product_articul(test_value_product_articl, test_correct_basket_product_articul)
+    test_value_basket_articul = bsp.correct_basket_product_articul
+    test_value_basket_price = bsp.correct_basket_product_price
+    # time.sleep(1)
+    bsp.assert_basket_product_articul(test_value_articul, test_value_basket_articul)
+    bsp.assert_basket_product_articul(test_value_price, test_value_basket_price)
     bsp.click_clear_button_method()
     # bsp.assert_basket_product_articul(bpsp.value_product_articul, bsp.correct_basket_product_articul)
     # bsp.assert_basket_product_price(bpsp.value_product_price, bsp.correct_basket_product_price)

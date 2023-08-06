@@ -47,6 +47,7 @@ class Bike_polygon_strattos_page(Base):
     def save_product_articul(self):
         self.value_product_articul = self.get_product_articul().text
         print("Product article is '" + self.value_product_articul + "'")
+
     def save_product_price(self):
         self.value_product_price = self.get_product_price().text
         print("Product price is '" + self.value_product_price + "'")

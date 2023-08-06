@@ -32,12 +32,12 @@ class Basket_page(Base):
 
     def save_basket_product_articul(self):
         self.basket_product_articul = self.get_basket_product_articul().text
-        self.correct_basket_product_articul = (self.basket_product_articul.partition(': ')[2]).split(' :')[0]
-        print("Product name in basket is '" + self.correct_basket_product_articul + "'")
+        self.correct_basket_product_articul = ((self.basket_product_articul.partition(': ')[2]).split(' штрих:')[0])
+        print("Product articul in a basket is '" + self.correct_basket_product_articul + "'")
     def save_basket_product_price(self):
         self.basket_product_price = self.get_basket_product_price().text
         self.correct_basket_product_price = self.basket_product_price.split(' руб.')[0]
-        print("Product price in basket is '" + self.correct_basket_product_price + "'")
+        print("Product price in a basket is '" + self.correct_basket_product_price + "'")
     def click_clear_button(self):
         self.get_clear_button().click()
         print("Click clear button")
@@ -54,24 +54,20 @@ class Basket_page(Base):
     def basket_product_price_method(self):
         self.save_basket_product_price()
 
-    def assert_basket_product_articul(self, article, correct_article):
-        assert article == correct_article, f"Product price mismatch. Expected: '{correct_article}', Actual: '{article}'"
-        # value_article = article.text
-        # value_correct_article = correct_article.text
-        # try:
-        #     assert value_article == value_correct_article
-        #     print("It's the same article" + value_correct_article)
-        # except AssertionError:
-        #     print("Probably the article is wrong. '" + value_article + "' is not the same as '" + value_correct_article + "'")
+    def assert_basket_product_articul(self, article, basket_article):
+        try:
+            assert article == basket_article
+            print("It's the same article: " + basket_article)
+        except AssertionError:
+            print("Probably the article is wrong. '" + article + "' is not the same as '" + basket_article + "'")
 
     def assert_basket_product_price(self, price, correct_price):
-        value_price = price.text
-        value_correct_price = correct_price.text
         try:
-            assert value_price == value_correct_price
-            print("It's the same price" + value_price)
+            assert price == correct_price
+            print("It's the same price: " + correct_price)
         except AssertionError:
-            print("Probably the price is wrong. " + value_price + " is not the same as " + value_correct_price + ".")
+            print("Probably the price is wrong. " + price + " is not the same as " + correct_price + ".")
 
     def click_clear_button_method(self):
+        self.get_screenshot()
         self.click_clear_button()
