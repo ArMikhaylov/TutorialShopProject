@@ -11,7 +11,7 @@ from pages.catalog_page import Catalog_page
 from pages.bike_polygon_strattos_page import Bike_polygon_strattos_page
 
 """Define Test 1"""
-# @pytest.mark.run(order=2)
+@pytest.mark.run(order=1)
 def test_buy_product_1(set_up, set_group):
 
     options = webdriver.ChromeOptions()
@@ -46,18 +46,15 @@ def test_buy_product_1(set_up, set_group):
     bsp.basket_product_price_method()
     test_value_basket_articul = bsp.correct_basket_product_articul
     test_value_basket_price = bsp.correct_basket_product_price
-    # time.sleep(1)
     bsp.assert_basket_product_articul(test_value_articul, test_value_basket_articul)
     bsp.assert_basket_product_articul(test_value_price, test_value_basket_price)
     bsp.click_clear_button_method()
-    # bsp.assert_basket_product_articul(bpsp.value_product_articul, bsp.correct_basket_product_articul)
-    # bsp.assert_basket_product_price(bpsp.value_product_price, bsp.correct_basket_product_price)
 
     print("Finish Test 1")
     time.sleep(1)
-    # driver.quit()
-#
-@pytest.mark.run(order=1)
+    driver.quit()
+
+@pytest.mark.run(order=2)
 def test_buy_product_2(set_up, set_group):
 
     options = webdriver.ChromeOptions()
@@ -71,33 +68,27 @@ def test_buy_product_2(set_up, set_group):
 
     bp = Bikes_page(driver)
     bp.product_2_choosing()
-#
-#     cp = Cart_page(driver)
-#     cp.click_checkout_button()
-#
-#     print("Finish Test 2")
-#     time.sleep(1)
-#     driver.quit()
-#
-#
-# # @pytest.mark.run(order=2)
-# def test_buy_product_3(set_up, set_group):
-#
-#     options = webdriver.ChromeOptions()
-#     options.add_experimental_option("detach", True)
-#     driver = webdriver.Chrome(options=options, service=Service())
-#
-#     print("Start Test 3")
-#
-#     login = Login_page(driver)
-#     login.authorization()
-#
-#     mp = Main_page(driver)
-#     mp.select_products_3()
-#
-#     cp = Cart_page(driver)
-#     cp.click_checkout_button()
-#
-#     print("Finish Test 3")
-#     time.sleep(1)
-#     driver.quit()
+
+    bpsp = Bike_polygon_strattos_page(driver)
+    bpsp.check_bike_polygon_strattos_page_link()
+    bpsp.product_articul_method()
+    bpsp.product_price_method()
+    test_2_value_articul = bpsp.value_product_articul
+    test_2_value_price = bpsp.value_product_price
+    bpsp.polygon_strattos_bike()
+    time.sleep(1)
+
+    bsp = Basket_page(driver)
+    bsp.check_basket_page_link()
+    bsp.basket_product_articul_method()
+    bsp.basket_product_price_method()
+    test_2_value_basket_articul = bsp.correct_basket_product_articul
+    test_2_value_basket_price = bsp.correct_basket_product_price
+    bsp.assert_basket_product_articul(test_2_value_articul, test_2_value_basket_articul)
+    bsp.assert_basket_product_articul(test_2_value_price, test_2_value_basket_price)
+    bsp.click_clear_button_method()
+
+    print("Finish Test 2")
+    time.sleep(1)
+    driver.quit()
+

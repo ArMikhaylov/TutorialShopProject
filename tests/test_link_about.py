@@ -19,7 +19,4 @@ def test_link_about(set_up):
     mp = Catalog_page(driver)
     mp.select_menu_about()
 
-
-
     time.sleep(1)
-    # driver.quit()
