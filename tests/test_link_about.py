@@ -1,10 +1,11 @@
+"""Library import"""
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from pages.login_page import Login_page
 from pages.catalog_page import Catalog_page
 
-
+"""Define Link Test"""
 def test_link_about(set_up):
 
     options = webdriver.ChromeOptions()

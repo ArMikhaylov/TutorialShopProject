@@ -114,8 +114,8 @@ class Bikes_page(Base):
 
     # Methods
 
+    """Product choosing 1 method"""
     def product_1_choosing(self):
-
         self.get_current_url()
         self.click_price_filter()
         self.input_max_price_filter("200000")
@@ -134,5 +134,6 @@ class Bikes_page(Base):
         self.click_model_year_filter()
         self.click_select_bike_polygon_strattos()
 
+    """Product choosing 2 method"""
     def product_2_choosing(self):
         self.click_select_bike_polygon_strattos()

@@ -36,14 +36,17 @@ class Catalog_page(Base):
 
     # Methods
 
+    """Catalog migration method"""
     def method_catalog_link(self):
         self.get_catalog_link()
         self.click_catalog_link()
 
+    """Bikes page migration method"""
     def method_bikes_page_link(self):
         self.get_bikes_page_link()
         self.click_bikes_page_link()
 
+    """Bikes page checking method"""
     def check_bikes_page_link(self):
         self.get_current_url()
         self.assert_url('https://www.desporte.ru/catalog/bikes/')

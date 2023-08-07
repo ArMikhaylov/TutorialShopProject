@@ -1,10 +1,10 @@
-
+"""Import libraries"""
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 
-
+"""Define class Login_page"""
 class Login_page(Base):
 
     def __init__(self, driver):
@@ -50,6 +50,7 @@ class Login_page(Base):
 
     # Methods
 
+    """The main authorization method"""
     def authorization(self):
 
         auth_url = 'https://www.desporte.ru/auth/'
@@ -64,6 +65,7 @@ class Login_page(Base):
         print("Moved to https://www.desporte.ru/personal/")
         self.assert_word(self.get_lk_word(), 'Личный кабинет')
 
+    """Method that opens a direct link"""
     def open_direct_link(self):
         bikes_filtered_url = 'https://www.desporte.ru/catalog/bikes/filter/price-base-to-200000/brand-is-poligon/code_type-is-shosseynyy-velosiped/style-is-bb70115eb856c8dd957fd528270f2365/whill-is-700%D1%81/itb_sex-is-uniseks/year-is-2021/apply/'
         self.driver.get(bikes_filtered_url)

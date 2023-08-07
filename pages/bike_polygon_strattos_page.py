@@ -17,7 +17,7 @@ class Bike_polygon_strattos_page(Base):
     xl_filter = "//*[@id='bx_117848907_47584_prop_105_list']/li[2]"
     basket_button = "//div[@id='bx_117848907_47584_basket_actions']"
     move_to_basket_button = "//div[@class='wrap_icon wrap_basket baskets line-block__item top_basket']"
-    product_articul = "//span[@class='article__value']"
+    product_vendor_code = "//span[@class='article__value']"
     product_price = "//*[@id='content']/div[2]/div/div/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/span[1]/span[1]"
 
     # Getters
@@ -28,8 +28,8 @@ class Bike_polygon_strattos_page(Base):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_button)))
     def get_move_to_basket_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.move_to_basket_button)))
-    def get_product_articul(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.product_articul)))
+    def get_product_vendor_code(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.product_vendor_code)))
     def get_product_price(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.product_price)))
 
@@ -44,9 +44,9 @@ class Bike_polygon_strattos_page(Base):
     def click_move_to_basket_button(self):
         self.get_move_to_basket_button().click()
         print("Click move to basket button")
-    def save_product_articul(self):
-        self.value_product_articul = self.get_product_articul().text
-        print("Product article is '" + self.value_product_articul + "'")
+    def save_product_vendot_code(self):
+        self.value_product_vendor_code = self.get_product_vendor_code().text
+        print("Product vendors code is '" + self.value_product_vendor_code + "'")
 
     def save_product_price(self):
         self.value_product_price = self.get_product_price().text
@@ -64,8 +64,10 @@ class Bike_polygon_strattos_page(Base):
         time.sleep(1)
         self.click_move_to_basket_button()
 
-    def product_articul_method(self):
-        self.save_product_articul()
+    """Product vendor code saving method"""
+    def product_vendor_code_method(self):
+        self.save_product_vendot_code()
 
+    """Product price saving method"""
     def product_price_method(self):
         self.save_product_price()
