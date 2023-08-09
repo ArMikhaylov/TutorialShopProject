@@ -32,4 +32,3 @@ class Base():
         get_url = self.driver.current_url
         assert get_url == result
         print("Good value url")
-Поменял путь для скриншотов относительно проекта, поменял локаторы, убрал лишние конструкции def __init__(self, driver)
