@@ -8,17 +8,13 @@ from base.base_class import Base
 """Define class Bike_polygon_strattos_page"""
 class Bike_polygon_strattos_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     # Locators
 
-    xl_filter = "//*[@id='bx_117848907_47584_prop_105_list']/li[2]"
+    xl_filter = "//li[@data-treevalue='105_1465']"
     basket_button = "//div[@id='bx_117848907_47584_basket_actions']"
     move_to_basket_button = "//div[@class='wrap_icon wrap_basket baskets line-block__item top_basket']"
     product_vendor_code = "//span[@class='article__value']"
-    product_price = "//*[@id='content']/div[2]/div/div/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/span[1]/span[1]"
+    product_price = "(//span[@class='price_value'])[3]"
 
     # Getters
 

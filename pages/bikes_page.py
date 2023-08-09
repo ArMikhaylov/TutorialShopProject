@@ -8,27 +8,23 @@ from base.base_class import Base
 """Define class Bikes_page"""
 class Bikes_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     # Locators
 
-    price_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[2]/div[1]/div"
+    price_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[1]"
     max_price_filter = "//input[@id='MAX_SMART_FILTER_P1_MAX']"
-    brand_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[3]/div[1]"
-    brand_polygon_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[3]/div[2]/div[1]/div[6]/div[7]/label/span/span"
-    bikes_type_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[4]/div[1]/div"
-    bikes_type_road_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[4]/div[2]/div[1]/div[5]/label/span/span"
-    riding_style_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[5]/div[1]/div/span[1]"
-    riding_style_aero_road_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[5]/div[2]/div[1]/div[6]/div[8]/label/span/span"
-    wheels_diametr_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[6]/div[1]"
-    wheels_diametr_28_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[6]/div[2]/div[1]/div[6]/div[4]/label/span/span"
-    gender_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[7]/div[1]"
-    gender_unisex_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[7]/div[2]/div[1]/div[4]/label/span/span"
-    model_year_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[8]/div[1]"
-    model_year_2021_filter = "//*[@id='right_block_ajax']/div[1]/div[2]/div/div/form/div[2]/div[8]/div[2]/div[1]/div[6]/div[3]/label/span/span"
-    select_bike_polygon_strattos = "//*[@id='bx_3966226736_47584']/div/div[2]/a/span/span"
+    brand_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[2]"
+    brand_polygon_filter = "//label[@data-role='label_MAX_SMART_FILTER_73_1626735240']"
+    bikes_type_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[3]"
+    bikes_type_road_filter = "//label[@data-role='label_MAX_SMART_FILTER_155_4014459541']"
+    riding_style_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[4]"
+    riding_style_aero_road_filter = "//label[@data-role='label_MAX_SMART_FILTER_180_1634310769']"
+    wheels_diametr_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[5]"
+    wheels_diametr_28_filter = "//label[@data-role='label_MAX_SMART_FILTER_126_2274021061']"
+    gender_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[6]"
+    gender_unisex_filter = "//label[@data-role='label_MAX_SMART_FILTER_166_308411424']"
+    model_year_filter = "(//div[@class='bx_filter_parameters_box_title title rounded3 box-shadow-sm'])[7]"
+    model_year_2021_filter = "//label[@data-role='label_MAX_SMART_FILTER_119_4122755967']"
+    select_bike_polygon_strattos = "(//span[@class='section-gallery-wrapper flexbox'])[2]"
 
     # Getters
 

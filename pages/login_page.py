@@ -7,11 +7,6 @@ from base.base_class import Base
 """Define class Login_page"""
 class Login_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
-
     # Locators
 
     user_name = "//input[@id='USER_LOGIN_POPUP']"

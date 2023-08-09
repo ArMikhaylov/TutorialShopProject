@@ -7,13 +7,9 @@ from base.base_class import Base
 """Define class Catalog_page"""
 class Catalog_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     # Locators
 
-    catalog_link = "//*[@id='header']/div/div[2]/div/div/div/div/nav/div/table/tbody/tr/td[1]/div/a"
+    catalog_link = "(//i[@class='svg inline  svg-inline-icon_catalog'])[2]"
     bikes_page_link = "//div[@class='section_item item bordered box-shadow']"
 
     # Getters

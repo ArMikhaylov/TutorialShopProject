@@ -25,10 +25,11 @@ class Base():
     def get_screenshot(self):
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         name_screenshot = 'screenshot' + now_date + '.png'
-        self.driver.save_screenshot('C:\\Education\\Python\\Projects\\shop_project\\screen\\' + name_screenshot)
+        self.driver.save_screenshot('..\\screen\\' + name_screenshot)
 
     """Method assert url"""
     def assert_url(self, result):
         get_url = self.driver.current_url
         assert get_url == result
         print("Good value url")
+Поменял путь для скриншотов относительно проекта, поменял локаторы, убрал лишние конструкции def __init__(self, driver)

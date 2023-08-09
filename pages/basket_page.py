@@ -7,10 +7,6 @@ from base.base_class import Base
 """Define class Basket_page"""
 class Basket_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     # Locators
 
     basket_product_vendor_code = "//span[@data-entity='basket-item-name']"
