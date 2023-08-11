@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Define class Bikes_page"""
 class Bikes_page(Base):
@@ -112,6 +113,7 @@ class Bikes_page(Base):
 
     """Product choosing 1 method"""
     def product_1_choosing(self):
+        Logger.add_start_step(method="product_1_choosing")
         self.get_current_url()
         self.click_price_filter()
         self.input_max_price_filter("200000")
@@ -129,7 +131,10 @@ class Bikes_page(Base):
         self.click_model_year_2021_filter()
         self.click_model_year_filter()
         self.click_select_bike_polygon_strattos()
+        Logger.add_end_step(url=self.driver.current_url, method="product_1_choosing")
 
     """Product choosing 2 method"""
     def product_2_choosing(self):
+        Logger.add_start_step(method="product_2_choosing")
         self.click_select_bike_polygon_strattos()
+        Logger.add_end_step(url=self.driver.current_url, method="product_2_choosing")

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Define class Catalog_page"""
 class Catalog_page(Base):
@@ -34,15 +35,21 @@ class Catalog_page(Base):
 
     """Catalog migration method"""
     def method_catalog_link(self):
+        Logger.add_start_step(method="method_catalog_link")
         self.get_catalog_link()
         self.click_catalog_link()
+        Logger.add_end_step(url=self.driver.current_url, method="method_catalog_link")
 
     """Bikes page migration method"""
     def method_bikes_page_link(self):
+        Logger.add_start_step(method="method_bikes_page_link")
         self.get_bikes_page_link()
         self.click_bikes_page_link()
+        Logger.add_end_step(url=self.driver.current_url, method="method_bikes_page_link")
 
     """Bikes page checking method"""
     def check_bikes_page_link(self):
+        Logger.add_start_step(method="check_bikes_page_link")
         self.get_current_url()
         self.assert_url('https://www.desporte.ru/catalog/bikes/')
+        Logger.add_end_step(url=self.driver.current_url, method="check_bikes_page_link")

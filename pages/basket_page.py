@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Define class Basket_page"""
 class Basket_page(Base):
@@ -39,14 +40,20 @@ class Basket_page(Base):
     # Methods
 
     def check_basket_page_link(self):
+        Logger.add_start_step(method="check_basket_page_link")
         self.get_current_url()
         self.assert_url('https://www.desporte.ru/basket/')
+        Logger.add_end_step(url=self.driver.current_url, method="check_basket_page_link")
 
     def basket_product_vendor_code_method(self):
+        Logger.add_start_step(method="basket_product_vendor_code_method")
         self.save_basket_product_vendor_code()
+        Logger.add_end_step(url=self.driver.current_url, method="basket_product_vendor_code_method")
 
     def basket_product_price_method(self):
+        Logger.add_start_step(method="basket_product_price_method")
         self.save_basket_product_price()
+        Logger.add_end_step(url=self.driver.current_url, method="basket_product_price_method")
 
     def assert_basket_product_vendor_code(self, article, basket_article):
         try:
@@ -63,5 +70,7 @@ class Basket_page(Base):
             print("Probably the price is wrong. " + price + " is not the same as " + basket_price + ".")
 
     def click_clear_button_method(self):
+        Logger.add_start_step(method="click_clear_button_method")
         self.get_screenshot()
         self.click_clear_button()
+        Logger.add_end_step(url=self.driver.current_url, method="click_clear_button_method")

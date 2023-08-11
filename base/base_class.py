@@ -1,5 +1,6 @@
 """Library import"""
 import datetime
+from utilities.logger import Logger
 
 """Define class Base"""
 class Base():
@@ -9,8 +10,10 @@ class Base():
 
     """Method get current url"""
     def get_current_url(self):
+        Logger.add_start_step(method="get_current_url")
         get_url = self.driver.current_url
         print("Current url " + get_url)
+        Logger.add_end_step(url=self.driver.current_url, method="get_current_url")
 
     """Method assert word"""
     def assert_word(self, word, result):
@@ -29,6 +32,8 @@ class Base():
 
     """Method assert url"""
     def assert_url(self, result):
+        Logger.add_start_step(method="assert_url")
         get_url = self.driver.current_url
         assert get_url == result
         print("Good value url")
+        Logger.add_end_step(url=self.driver.current_url, method="assert_url")
