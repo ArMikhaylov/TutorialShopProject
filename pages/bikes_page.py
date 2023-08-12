@@ -113,6 +113,7 @@ class Bikes_page(Base):
 
     """Product choosing 1 method"""
     def product_1_choosing(self):
+
         Logger.add_start_step(method="product_1_choosing")
         self.get_current_url()
         self.click_price_filter()
@@ -135,6 +136,7 @@ class Bikes_page(Base):
 
     """Product choosing 2 method"""
     def product_2_choosing(self):
+
         Logger.add_start_step(method="product_2_choosing")
         self.click_select_bike_polygon_strattos()
         Logger.add_end_step(url=self.driver.current_url, method="product_2_choosing")

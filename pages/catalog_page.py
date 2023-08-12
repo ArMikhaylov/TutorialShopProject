@@ -35,6 +35,7 @@ class Catalog_page(Base):
 
     """Catalog migration method"""
     def method_catalog_link(self):
+
         Logger.add_start_step(method="method_catalog_link")
         self.get_catalog_link()
         self.click_catalog_link()
@@ -42,6 +43,7 @@ class Catalog_page(Base):
 
     """Bikes page migration method"""
     def method_bikes_page_link(self):
+
         Logger.add_start_step(method="method_bikes_page_link")
         self.get_bikes_page_link()
         self.click_bikes_page_link()
@@ -49,6 +51,7 @@ class Catalog_page(Base):
 
     """Bikes page checking method"""
     def check_bikes_page_link(self):
+
         Logger.add_start_step(method="check_bikes_page_link")
         self.get_current_url()
         self.assert_url('https://www.desporte.ru/catalog/bikes/')

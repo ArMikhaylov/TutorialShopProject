@@ -52,12 +52,14 @@ class Bike_polygon_strattos_page(Base):
     # Methods
 
     def check_bike_polygon_strattos_page_link(self):
+
         Logger.add_start_step(method="check_bike_polygon_strattos_page_link")
         self.get_current_url()
         self.assert_url('https://www.desporte.ru/catalog/bikes/shosseynye/shosseynyy/strattos_s5d/?oid=47586')
         Logger.add_end_step(url=self.driver.current_url, method="check_bike_polygon_strattos_page_link")
 
     def polygon_strattos_bike(self):
+
         Logger.add_start_step(method="polygon_strattos_bike")
         self.click_xl_filter()
         self.click_basket_button()
@@ -67,12 +69,14 @@ class Bike_polygon_strattos_page(Base):
 
     """Product vendor code saving method"""
     def product_vendor_code_method(self):
+
         Logger.add_start_step(method="product_vendor_code_method")
         self.save_product_vendot_code()
         Logger.add_end_step(url=self.driver.current_url, method="product_vendor_code_method")
 
     """Product price saving method"""
     def product_price_method(self):
+
         Logger.add_start_step(method="product_price_method")
         self.save_product_price()
         Logger.add_end_step(url=self.driver.current_url, method="product_price_method")
