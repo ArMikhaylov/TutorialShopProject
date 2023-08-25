@@ -1,6 +1,7 @@
 """Library import"""
 import time
 import pytest
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from pages.basket_page import Basket_page
@@ -11,6 +12,7 @@ from pages.bike_polygon_strattos_page import Bike_polygon_strattos_page
 
 """Define Test 1"""
 @pytest.mark.run(order=1)
+@allure.description("Test buy product 1")
 def test_buy_product_1(set_up, set_group):
 
     options = webdriver.ChromeOptions()
@@ -55,6 +57,7 @@ def test_buy_product_1(set_up, set_group):
 
 """Define Test 2"""
 @pytest.mark.run(order=2)
+@allure.description("Test buy product 2")
 def test_buy_product_2(set_up, set_group):
 
     options = webdriver.ChromeOptions()

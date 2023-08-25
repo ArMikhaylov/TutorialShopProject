@@ -1,12 +1,14 @@
 """Library import"""
 import time
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from pages.login_page import Login_page
 from pages.catalog_page import Catalog_page
 
 """Define Authorization Test"""
-def test_link_about(set_up):
+@allure.description("Test links")
+def test_links(set_up):
 
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", True)
